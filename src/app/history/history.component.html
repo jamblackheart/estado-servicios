@@ -1,3 +1,104 @@
-<p>
-  history works!
-</p>
+<form [formGroup]="form">
+
+    <div class="m-3 pt-1 pb-1 hidden-md-down">
+        <h2 class="text-center">Historial de servicios</h2>
+    </div>
+
+      
+       <label class="TituloRango">Rango de fechas</label>
+    <br/>
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+        <input type="text" (change)="consultarHistorial()"
+               placeholder="Rango de fechas"
+               class="form-control"
+               bsDaterangepicker
+               [bsConfig]="{ isAnimated: true }">
+      </div>
+
+
+    
+      <label class="TituloRango">Servicios</label>
+        <select class="custom-select" (change)="consultarHistorial($event)" [(ngModel)]="servicio" >
+            <option value="" disabled>Seleccione un servicio</option>
+            <option *ngFor="let element of serviciosList" [ngValue]="element.id">{{element.nombre}}</option>           
+         </select>
+      
+
+         <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Servicio</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Detalle</th>
+                <ng-container *ngIf="esColaborador">
+                    <th scope="col">Modificado por</th>              
+                </ng-container>
+        
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let element of serviciosList | paginate: { itemsPerPage: 10, currentPage: p }">
+                <th>{{element.nombre}}</th>
+                <td>{{element.estado}}</td>
+                <td>
+                            
+                        <button type="button" class="btnDescripcion" (click)="openModal(template, element.descripcion)">Descripción</button>
+                        
+                        <ng-container *ngIf="element.estado !== 'Correcto'" >
+                            <br/>   
+                             
+                            <button type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button> 
+                                      
+        
+                        </ng-container>
+                   
+                </td>
+                <ng-container *ngIf="esColaborador">
+                    <td>{{element.usuarioModifica.Title}}</td>              
+                </ng-container>
+              </tr>
+             
+            </tbody>
+          </table>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        
+        
+          
+        <br>
+         
+        <ng-template #template id="modal">
+          <div class="modal-header">        
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="text-center">
+                  <img style="width: 250px;" _ngcontent-c2="" alt="Puntos Colombia" class="modal-logo" src="assets/images/logo.png">
+                </div>
+                
+                <div _ngcontent-c2="" class="modal-dialog modal-open" style="max-width: 480px">
+                        <div _ngcontent-c2="" class="col container align-items-center">
+                            <div _ngcontent-c2="" class="modal-content">
+                                
+                               <div _ngcontent-c2="" class="login-modal__form-wrapper justify-content-center text-center">
+                                    <form _ngcontent-c2="" class="m-0 ng-pristine ng-invalid ng-touched" novalidate="">
+                                        <label _ngcontent-c2="">{{textoModal}}</label>
+                                        
+                                       
+                                        
+                                    </form>
+                
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+          </div>
+        </ng-template>
+
+   
+  </form>

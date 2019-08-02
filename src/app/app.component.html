@@ -1,10 +1,7 @@
 
    <nav class="navbar sticky-top main-nav">
     <div style="width: 100%" class="main-nav__info-bar">
-        <div class="hidden-sm-down main-nav__info-bar__content">
-            <a class="points-converter-label" routerlink="/puntos" href="/puntos">CONVIERTE TUS PUNTOS</a>
-            <a routerlink="/quienes-somos" href="/quienes-somos">Conócenos</a>
-            <a routerlink="/ayuda" href="/ayuda">Ayuda</a>
+        <div class="hidden-sm-down main-nav__info-bar__content" style="height: 15px">
         </div>
     </div>
 
@@ -33,8 +30,77 @@
 
    
 </nav>
-      <router-outlet></router-outlet>
 
+<main _ngcontent-c0="" class="ro-app-content" role="main">
+       
+    
+
+
+    <div class="container">
+        <div class="points-card">
+            <div class="d-flex flex-row">
+                <div class="grey text-left w-100">Servicios:</div>
+                <div class="points text-right w-100">15</div>
+            </div>
+            <div class="line mt-0 mb-0"></div>
+            <div class="d-flex flex-row">
+                <div class="grey text-left w-100">Incidentes:</div>
+                <div class="pointsIncidente text-right w-100">0</div>
+            </div>
+        </div>
+
+        <div class="row profile-card">
+
+            <div class="col-lg-3 mb-3 leftcol">
+                <div class="p-3 leftrow">
+
+                    <div class="m-1 profile-dashboard-item" routerlinkactive="active-dashboard-item">
+                            
+                        <a routerLink="/Servicios" routerLinkActive="active">
+                            <img alt="" src="../../assets/images/profile/dashboard/deselected/dashboard_1_grey.svg">
+                            <span class="ml-3">Estado Servicios</span>
+                        </a>
+                    </div>
+
+                    <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
+                        <a routerLink="/Historial"  routerLinkActive="active">
+                            <img alt="" src="../../assets/images/profile/dashboard/deselected/dashboard_2_grey.svg">
+                            <span class="ml-3">Historial de servicios</span>
+                        </a>
+                    </div>
+
+                    <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
+                        <a routerLink="/Actualizar" routerLinkActive="active" >
+                            <img alt="" src="../../assets/images/profile/dashboard/deselected/dashboard_3_grey.svg">
+                            <span class="ml-3">Actualizar servicios</span>
+                        </a>
+                    </div>
+                   
+                </div>
+                <div class="p-3">
+                    <div class="m-1 mt-3 profile-dashboard-item">
+                        <a href="/logout">
+                            <img alt="" src="D:/Enovel/PuntosColombia/assets/images/profile/dashboard/deselected/dashboard_7_grey.svg">
+                            <span class="ml-3">Cerrar sesión</span>
+                        </a>
+                    </div>
+                </div>
+            </div>           
+
+            <div class="col-lg-9  justify-content-center align-items-center">
+               
+
+                
+                <router-outlet></router-outlet>
+                
+            </div>
+        </div>
+        <div style="height: 15px;">
+
+        </div>
+    </div>
+
+</main>
      
          <footer class="footer-nav footer-nav__profile-section">
               <div class="footer-nav__section footer-nav__section--puntos">
@@ -42,7 +108,8 @@
                       <h6 class="footer-nav__content__title">Puntos Colombia</h6>
                       <ul>
                           <li>
-                              <a class="footer-nav__content__link" routerlink="/quienes-somos" href="/quienes-somos">Conócenos</a>
+                                
+                              <a class="footer-nav__content__link" routerlink="/quienes-somos" >Conócenos</a>
                           </li>
                           <li>
                               <a class="footer-nav__content__link" routerlink="/legal" href="/legal">Documentos Legales</a>

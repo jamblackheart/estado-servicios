@@ -1,155 +1,81 @@
   
-  
-  
-  <main _ngcontent-c0="" class="ro-app-content" role="main">
-       
-            <div class="container">
-                <div class="top-row">
-                    <div class="points-card">
-                        <div class="d-flex flex-row">
-                            <div class="grey text-left w-100">Servicios:</div>
-                            <div class="points text-right w-100">15</div>
-                        </div>
-
-                        <div class="line mt-0 mb-0"></div>
-
-                        <div class="d-flex flex-row">
-                            <div class="grey text-left w-100">Problemas:</div>
-                            <div class="points text-right w-100">0</div>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="row profile-card">
-
-                    <div class="col-lg-3 mb-3 leftcol">
-
+  <div class="m-3 pt-1 pb-1 hidden-md-down">
+      <h2 class="text-center">Estado actual servicios</h2>
+  </div>                          
                         
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Servicio</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Detalle</th>
+        <ng-container *ngIf="esColaborador">
+            <th scope="col">Modificado por</th>              
+        </ng-container>
+
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of string | paginate: { itemsPerPage: 10, currentPage: p }">
+        <th>{{element.nombre}}</th>
+        <td>{{element.estado}}</td>
+        <td>
+                    
+                <button type="button" class="btnDescripcion" (click)="openModal(template, element.descripcion)">Descripción</button>
+                
+                <ng-container *ngIf="element.estado !== 'Correcto'" >
+                    <br/>   
+                     
+                    <button type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button> 
+                              
+
+                </ng-container>
+           
+        </td>
+        <ng-container *ngIf="esColaborador">
+            <td>{{element.usuarioModifica.Title}}</td>              
+        </ng-container>
+      </tr>
+     
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+  
+<br>
+ 
+<ng-template #template id="modal">
+  <div class="modal-header">        
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="text-center">
+          <img style="width: 250px;" _ngcontent-c2="" alt="Puntos Colombia" class="modal-logo" src="assets/images/logo.png">
+        </div>
+        
+        <div _ngcontent-c2="" class="modal-dialog modal-open" style="max-width: 480px">
+                <div _ngcontent-c2="" class="col container align-items-center">
+                    <div _ngcontent-c2="" class="modal-content">
                         
-                        <div class="p-3 leftrow">
-
-                            <div class="m-1 profile-dashboard-item" routerlinkactive="active-dashboard-item">
-                                <a routerlink="D:\Enovel\PuntosColombia\Todos.Html" href="D:\Enovel\PuntosColombia\Todos.Html">
-                                    <img alt="" src="D:/Enovel/PuntosColombia/assets/images/profile/dashboard/deselected/dashboard_1_grey.svg">
-                                    <span class="ml-3">Estado Servicios</span>
-                                </a>
-                            </div>
-
-                            <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
-                                <a routerlink="D:\Enovel\PuntosColombia\HistoricoEventos.Html" href="D:\Enovel\PuntosColombia\HistoricoEventos.Html">
-                                    <img alt="" src="D:/Enovel/PuntosColombia/assets/images/profile/dashboard/deselected/dashboard_2_grey.svg">
-                                    <span class="ml-3">Historial de servicios</span>
-                                </a>
-                            </div>
-
-                            <div class="m-1 mt-3 profile-dashboard-item active-dashboard-item" routerlinkactive="active-dashboard-item">
-                                <a routerlink="D:\Enovel\PuntosColombia\ActualizarServicios.Html" href="D:\Enovel\PuntosColombia\ActualizarServicios.Html">
-                                    <img alt="" src="D:/Enovel/PuntosColombia/assets/images/profile/dashboard/deselected/dashboard_3_purple.svg">
-                                    <span class="ml-3">Actualizar servicios</span>
-                                </a>
-                            </div>
+                       <div _ngcontent-c2="" class="login-modal__form-wrapper justify-content-center text-center">
+                            <form _ngcontent-c2="" class="m-0 ng-pristine ng-invalid ng-touched" novalidate="">
+                                <label _ngcontent-c2="">{{textoModal}}</label>
+                                
+                               
+                                
+                            </form>
+        
                            
                         </div>
-
-                        <div class="p-3">
-
-
-
-                            <div class="m-1 mt-3 profile-dashboard-item">
-                                <a href="/logout">
-                                    <img alt="" src="D:/Enovel/PuntosColombia/assets/images/profile/dashboard/deselected/dashboard_7_grey.svg">
-                                    <span class="ml-3">Cerrar sesión</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="col-lg-8 justify-content-center align-items-center">
-                        <div class="m-3 pt-1 pb-1 hidden-md-down">
-                            <h2>¡Hola JAIRO ALONSO MARIN MANCO!</h2>
-                        </div>
-                        <router-outlet></router-outlet>
-                        
-                            <div _ngcontent-c32="" class="d-flex flex-column">
-                                <!---->
-                                <div _ngcontent-c32="" class="table-wrapper align-self-stretch">
-
-                                    <!---->
-                                    <!----><div _ngcontent-c32="" class="sort-div">
-                                        <div _ngcontent-c32="" class="d-flex w-100 justify-content-start">
-                                            <button _ngcontent-c32="" class="sort-button" tabindex="0">
-                                                <span _ngcontent-c32="" class="sort-span">
-                                                    Servicio
-                                                    <img _ngcontent-c32="" class="sort-img d-rotate" src="assets/images/profile/transaction_list/sort_cevron.svg">
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <div _ngcontent-c32="" class="d-flex w-100 justify-content-center">
-                                            <button _ngcontent-c32="" class="sort-button" tabindex="0">
-                                                <span _ngcontent-c32="" class="sort-span">
-                                                    Estado
-                                                    <img _ngcontent-c32="" class="sort-img d-rotate" src="assets/images/profile/transaction_list/sort_cevron.svg">
-                                                </span>
-                                            </button>
-                                        </div>
-                                        
-                                        <div _ngcontent-c32="" class="d-flex w-100 justify-content-center hide-mobile">
-                                            <button _ngcontent-c32="" class="sort-button" tabindex="0">
-                                                <span _ngcontent-c32="" class="sort-span">
-                                                    Detalle
-                                                    <img _ngcontent-c32="" class="sort-img d-rotate" src="assets/images/profile/transaction_list/sort_cevron.svg">
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <ng-container *ngIf="esColaborador">
-                                          <div _ngcontent-c32="" class="d-flex w-100 justify-content-center hide-mobile">
-                                              <button _ngcontent-c32="" class="sort-button" tabindex="0">
-                                                  <span _ngcontent-c32="" class="sort-span">
-                                                      Modificado por
-                                                      <img _ngcontent-c32="" class="sort-img d-rotate" src="assets/images/profile/transaction_list/sort_cevron.svg">
-                                                  </span>
-                                              </button>
-                                          </div>
-                                            
-                                        </ng-container>
-
-                                    </div>
-
-
-                                    <ul _ngcontent-c32="" class="list-group" *ngFor="let element of string">
-                                    
-                                        <li _ngcontent-c32="" class="list-item-row earn-points">
-                                            <div _ngcontent-c32="" class=" d-flex justify-content-start w-100">
-                                                <span _ngcontent-c32="" class="list-item-left">{{element.nombre}}</span>
-                                            </div>
-                                            <div _ngcontent-c32="" class=" d-flex justify-content-center w-100">
-                                                <span _ngcontent-c32="" class=" list-item-center">{{element.estado}}</span>
-                                            </div>
-                                            <div _ngcontent-c32="" class=" d-flex justify-content-center w-100 hide-mobile">
-                                                <span _ngcontent-c32="" class=" list-item-center">{{element.descripcion}}</span>
-                                            </div>
-                                            <ng-container *ngIf="esColaborador">
-                                                <div _ngcontent-c32="" class=" d-flex justify-content-center w-100 hide-mobile">
-                                                    <span _ngcontent-c32="" class=" list-item-center">{{element.usuarioModifica.Title}}</span>
-                                                </div>
-                                                  
-                                              </ng-container>
-
-                                        </li>
-                                        
-                                    </ul>
-                                    
-
-                                </div>
-                            </div>
-                        
-                    </div>
-                </div>
-                <div style="height: 10px;">
-
                 </div>
             </div>
-       
-</main>
+
+
+  </div>
+</ng-template>
 

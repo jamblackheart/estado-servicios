@@ -1,0 +1,10 @@
+.TituloRango
+{padding-left: 10px;
+    margin-left: 10px;
+color: #767676;
+font-size: 14px;
+line-height: 17px;}
+
+.bs-datepicker-head {
+    background-color: #ff1674 !important;
+}

@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,TemplateRef } from '@angular/core';
 import {SPServicio} from '../servicios/sp-servicio';
 import {Servicios} from '../dominios/servicios';
 import {Usuario} from '../dominios/usuario';
 import {Grupo} from '../dominios/grupo';
+import { ModalModule, BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
 
 @Component({
   selector: 'app-all-services',
@@ -18,10 +20,14 @@ export class AllServicesComponent implements OnInit {
   usuarioActual: Usuario;
   esColaborador: boolean;
   grupos: Grupo[] = []; 
+  modalRef: BsModalRef;
+
+  textoModal:string = "";
+
  
 
 
-  constructor(public servicios:SPServicio) { }
+  constructor(public servicios:SPServicio, private modalService: BsModalService) { }
 
   ngOnInit() {
     this.ObtenerUsuarioActual() ;
@@ -78,5 +84,12 @@ export class AllServicesComponent implements OnInit {
       }
     )
   }
+
+  openModal(template: TemplateRef<any>,  texto: string) {
+    this.modalRef = this.modalService.show(template);
+    this.textoModal = texto;
+  }
+
+
 
 }

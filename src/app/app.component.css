@@ -6,7 +6,15 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-box-shadow: 0 1px 20px 0 #666;
-    box-shadow: 0 1px 20px 0 #666
+    box-shadow: 0 1px 20px 0 #666;
+    background: white;
+}
+
+
+
+.resumen{
+margin-top: 50px;
+
 }
 
 .logo{
@@ -2415,16 +2423,22 @@ img.round[_ngcontent-c23] {
 }
 
 .points-card {
-    position: absolute;
-    width: 250px;
-    top: 15px;
-    right: 0;
-    background: #fff;
-    border: solid transparent;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 3px 7px 0 rgba(0,0,0,.1);
-    box-shadow: 0 3px 7px 0 rgba(0,0,0,.1);
-    padding: 5px 10px
+    
+        /* position: absolute; */
+        width: 250px;
+        /* top: 15px; */
+        /* right: 0; */
+        background: #fff;
+        border: solid transparent;
+        border-radius: 10px;
+        box-shadow: 0 3px 7px 0 rgba(0,0,0,.1);
+        padding: 5px 10px;
+        margin-bottom: 15px;
+    
+}
+
+.container{
+    margin-top: 40px;
 }
 
 @media (max-width:767px) {
@@ -2439,6 +2453,13 @@ img.round[_ngcontent-c23] {
     font-size: 25px;
     font-weight: 600
 }
+
+.points-card .pointsIncidente {
+    color: #5c216e;
+    font-size: 25px;
+    font-weight: 600
+}
+
 
 .points-card .grey {
     color: #767676;
