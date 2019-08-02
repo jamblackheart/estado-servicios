@@ -8,17 +8,23 @@
        <label class="TituloRango">Rango de fechas</label>
     <br/>
     <div class="col-xs-12 col-12 col-md-4 form-group">
-        <input type="text" (change)="consultarHistorial()"
+        <input type="text" (change)="consultarHistorialDate($event)"
                placeholder="Rango de fechas"
                class="form-control"
                bsDaterangepicker
-               [bsConfig]="{ isAnimated: true }">
+               [bsConfig]="{ isAnimated: true, containerClass:'theme-dark-blue' }"
+               #rangoFechas
+               [ngModel]="date"
+               (blur)="date = rangoFechas.value"
+               formControlName="rangoFechas"
+                >
       </div>
 
+      <button type="button" class="btnConsultar" (click)="consultarHistorial()">Consultar</button>
 
     
       <label class="TituloRango">Servicios</label>
-        <select class="custom-select" (change)="consultarHistorial($event)" [(ngModel)]="servicio" >
+        <select class="custom-select"  [(ngModel)]="servicio" formControlName="selectServicios" >
             <option value="" disabled>Seleccione un servicio</option>
             <option *ngFor="let element of serviciosList" [ngValue]="element.id">{{element.nombre}}</option>           
          </select>
@@ -27,7 +33,7 @@
          <table class="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Servicio</th>
+                <th scope="col">Fecha</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Detalle</th>
                 <ng-container *ngIf="esColaborador">
@@ -38,24 +44,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let element of serviciosList | paginate: { itemsPerPage: 10, currentPage: p }">
-                <th>{{element.nombre}}</th>
+              <tr *ngFor="let element of serviciosHistoriaList | paginate: { itemsPerPage: 10, currentPage: p }">
+                <th>{{element.fechaModificacion}}</th>
                 <td>{{element.estado}}</td>
-                <td>
-                            
-                        <button type="button" class="btnDescripcion" (click)="openModal(template, element.descripcion)">Descripción</button>
-                        
-                        <ng-container *ngIf="element.estado !== 'Correcto'" >
-                            <br/>   
-                             
-                            <button type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button> 
-                                      
-        
-                        </ng-container>
-                   
-                </td>
+                <td>                           
+                        <button type="button" class="btnDescripcion" (click)="openModal(template, element.detalleCambio)">Ver...</button>
+                    </td>
                 <ng-container *ngIf="esColaborador">
-                    <td>{{element.usuarioModifica.Title}}</td>              
+                    <td> </td>              
                 </ng-container>
               </tr>
              

@@ -8,9 +8,9 @@ import { HistoryComponent } from './history/history.component';
 import { UpdateStatusComponent } from './update-status/update-status.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
@@ -30,6 +30,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     FormsModule,
         ReactiveFormsModule,
         BsDropdownModule.forRoot()
+        
   ],
   providers: [SPServicio],
   bootstrap: [AppComponent]

@@ -62,10 +62,13 @@ export class SPServicio {
         return respuesta; 
     }
 
-    ObtenerServicio(idSolicitud){
-        let respuesta = this.ObtenerConfiguracionConPost().web.lists.getByTitle(environment.ListaServicios).items.filter("idServicio eq "+idSolicitud+" and TipoServicio eq 'Orden de servicio'").getAll();
+    ObtenerHistoriaServicio(idSolicitud){
+        let respuesta = this.ObtenerConfiguracion().web.lists.getByTitle(environment.ListaHistoriaServicios).items.select("*","usuarioModifica/Title","servicio/Title").expand("usuarioModifica","servicio").filter("servicioId eq "+ idSolicitud).getAll();
         return respuesta;
     }
+
+
+    
 
     ObtenerTodosLosServicios(){
         let respuesta = this.ObtenerConfiguracion().web.lists.getByTitle(environment.ListaServicios).items.select("*","usuarioModifica/Title").expand("usuarioModifica").getAll();

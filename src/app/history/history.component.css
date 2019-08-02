@@ -8,3 +8,13 @@ line-height: 17px;}
 .bs-datepicker-head {
     background-color: #ff1674 !important;
 }
+
+.btnDescripcion{
+    background-color: #ff1674;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 150px;
+}

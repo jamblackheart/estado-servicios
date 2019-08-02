@@ -7,7 +7,9 @@ export const environment = {
   urlRaiz: 'https://enovelsoluciones.sharepoint.com',
   urlWeb: 'https://enovelsoluciones.sharepoint.com/sites/jam/EstadoServicios',
   urlReltativa: '/sites/jam/EstadoServicios',
-  ListaServicios: 'Servicios'
+  ListaServicios: 'Servicios',
+  ListaHistoriaServicios: 'HistoriaServicios'
+
 };
 
 /*
