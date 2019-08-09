@@ -53,19 +53,19 @@ export class SPServicio {
     
 
     GuardarServicio(ObjServicio){
-        let respuesta = this.ObtenerConfiguracionConPost().web.lists.getByTitle(environment.ListaServicios).items.add(ObjServicio);
+        let respuesta = this.ObtenerConfiguracion().web.lists.getByTitle(environment.ListaServicios).items.add(ObjServicio);
         return respuesta;
     }
 
 
     GuardarHistoriaServicio(ObjServicio){
-        let respuesta = this.ObtenerConfiguracionConPost().web.lists.getByTitle(environment.ListaHistoriaServicios).items.add(ObjServicio);
+        let respuesta = this.ObtenerConfiguracion().web.lists.getByTitle(environment.ListaHistoriaServicios).items.add(ObjServicio);
         return respuesta;
     }
 
 
     ModificarServicio(ObjServicio, idServicio){
-        let respuesta = this.ObtenerConfiguracionConPost().web.lists.getByTitle(environment.ListaServicios).items.getById(idServicio).update(ObjServicio);
+        let respuesta = this.ObtenerConfiguracion().web.lists.getByTitle(environment.ListaServicios).items.getById(idServicio).update(ObjServicio);
         return respuesta; 
     }
 

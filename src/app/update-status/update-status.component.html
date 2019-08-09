@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let element of string | paginate: { itemsPerPage: 10, currentPage: p }">
+    <tr *ngFor="let element of string | paginate: { itemsPerPage: 10 }">
       <th>{{element.nombre}}</th>
       <td>{{element.estado}}</td>
       <td>
@@ -34,7 +34,7 @@
 
   </tbody>
 </table>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<pagination-controls (pageChange)="$event"></pagination-controls>
 
 
 

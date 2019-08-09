@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  urlRaiz: 'https://enovelsoluciones.sharepoint.com',
-  urlWeb: 'https://enovelsoluciones.sharepoint.com/sites/jam/EstadoServicios',
-  urlReltativa: '/sites/jam/EstadoServicios',
+  urlRaiz: 'https://puntoscolombia.sharepoint.com',
+  urlWeb: 'https://puntoscolombia.sharepoint.com/EstadoServicios',
+  urlReltativa: '/EstadoServicios',
   ListaServicios: 'Servicios',
   ListaHistoriaServicios: 'HistoriaServicios'
 

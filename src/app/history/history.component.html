@@ -14,8 +14,6 @@
                bsDaterangepicker
                [bsConfig]="{ isAnimated: true, containerClass:'theme-dark-blue' }"
                #rangoFechas
-               [ngModel]="date"
-               
                formControlName="rangoFechas"
                 >
     </div> 
@@ -24,7 +22,7 @@
     <div class="col-8">
 
           <label class="TituloRango">Servicios</label>
-          <select class="custom-select"  [(ngModel)]="servicio" formControlName="selectServicios" >
+          <select class="custom-select"  formControlName="selectServicios" >
               <option value="" disabled>Seleccione un servicio</option>
               <option *ngFor="let element of serviciosList" [ngValue]="element.id">{{element.nombre}}</option>           
            </select>
@@ -54,7 +52,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let element of serviciosHistoriaList | paginate: { itemsPerPage: 10, currentPage: p }">
+              <tr *ngFor="let element of serviciosHistoriaList | paginate: { itemsPerPage: 10 }">
                 <th>{{element.fechaModificacion | date: 'dd-MM-yyyy'}}</th>
                 <td>{{element.estado}}</td>
                 <td>                           
@@ -67,10 +65,7 @@
              
             </tbody>
           </table>
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        
-        
-          
+          <pagination-controls (pageChange)="$event"></pagination-controls>
         <br>
          
         <ng-template #template id="modal">
