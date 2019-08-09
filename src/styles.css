@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.bs-datepicker-head, .select-start, .select-end {
+    background-color: #EB0F70 !important;
+}
+

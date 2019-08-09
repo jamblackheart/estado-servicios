@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\all-services",
+    "\\src\\app\\dominios",
+    "\\src\\app\\history",
+    "\\src\\app\\update-status"
+  ],
+  "SelectedNode": "\\src\\app\\update-status\\update-status.component.ts",
+  "PreviewInSolutionExplorer": false
+}

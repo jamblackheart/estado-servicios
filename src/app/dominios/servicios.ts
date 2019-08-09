@@ -2,7 +2,7 @@ export class Servicios{
     constructor(
         public id:Int16Array,
         public nombre: string, 
-        public estado: number, 
+        public estado: string, 
         public descripcion: string,
         public detalleCambio:string,
         public usuarioModifica: any

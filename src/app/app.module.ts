@@ -12,6 +12,7 @@ import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     BsDatepickerModule.forRoot(),
     FormsModule,
         ReactiveFormsModule,
-        BsDropdownModule.forRoot()
+        BsDropdownModule.forRoot(),TextareaAutosizeModule
         
   ],
   providers: [SPServicio],

@@ -11,6 +11,7 @@ import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 
 
 
+
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
@@ -22,11 +23,8 @@ export class HistoryComponent implements OnInit {
   bsValue = new Date();
   bsRangeValue: Date[];
   maxDate = new Date();
-
   serviciosList: Servicios[] = [];
-
   serviciosHistoriaList: Historial[] = [];
-
   nombreUsuario: any;
   emailUsuario: any;
   idUsuario: number;
@@ -34,33 +32,25 @@ export class HistoryComponent implements OnInit {
   esColaborador: boolean;
   grupos: Grupo[] = []; 
   modalRef: BsModalRef;
-
   textoModal:string = "";
-
   form:FormGroup;
-
-
-
-
 private registrarControles() {
 this.form= this.formulario.group({  
   rangoFechas: [""],
   selectServicios: [""]
 })
 };
- 
 
-
-
-  constructor(public servicios:SPServicio, private modalService: BsModalService, private formulario: FormBuilder) {
+  constructor(public servicios:SPServicio, 
+    private modalService: BsModalService, 
+    private formulario: FormBuilder) {
     this.maxDate.setDate(this.maxDate.getDate() + 7);
     this.bsRangeValue = [this.bsValue, this.maxDate];
    }
 
   ngOnInit() {
     this.registrarControles();
-    this.ObtenerUsuarioActual() ;
-    
+    this.ObtenerUsuarioActual() ;    
     this.ObtenerTodosLosServicios();
   }
 
@@ -75,8 +65,7 @@ this.form= this.formulario.group({
         this.obtenerGrupos();
 
       }, err => {
-        console.log('Error obteniendo usuario: ' + err);
-        
+        console.log('Error obteniendo usuario: ' + err);        
       }
     )
   };
@@ -87,8 +76,7 @@ this.form= this.formulario.group({
     this.servicios.ObtenerGruposUsuario(idUsuario).subscribe(
     (respuesta) => {
     this.grupos = Grupo.fromJsonList(respuesta);
-    this.verificarPermisos();
-   
+    this.verificarPermisos();   
     }, err => {
     console.log('Error obteniendo grupos de usuario: ' + err);
     }
@@ -118,47 +106,42 @@ this.form= this.formulario.group({
   }
 
 
-  consultarHistorialDate(e){
-   
-     var idServicio = (e.target.value).split(":");
-     if(idServicio.length >= 1 )
-     {
-        idServicio = idServicio[1].trim();
-        alert("cambiamos id= " + idServicio);
-
-     }
-    
-
-
-  }
-
-  consultarHistorialServicios(e){
-   
-    var idServicio = (e.target.value).split(":");
-    if(idServicio.length >= 1 )
-    {
-       idServicio = idServicio[1].trim();
-       alert("cambiamos id= " + idServicio);
-
-    }
-
- }
-
- consultarHistorial(idServicio:string, fechaInicial:Date, fechaFinal:Date)
+ consultarHistorial(template: TemplateRef<any>)
  {
-   alert("vamos a consultar el historial select= " + this.form.get("selectServicios").value + " fechas: " + this.form.get("rangoFechas").value);
    let idDelServicio = this.form.get("selectServicios").value;
+  var rangoFechas = this.form.get("rangoFechas").value;
+ 
+  if( (rangoFechas !== null && rangoFechas !== undefined) && idDelServicio !== undefined)
+  {
+  let fechaIni=this.ObtenerFormatoFecha(new Date(rangoFechas[0]));
+  let fechaFin=this.ObtenerFormatoFecha(new Date(rangoFechas[1]));
 
-   this.servicios.ObtenerHistoriaServicio(idDelServicio).then(
+   this.servicios.ObtenerHistoriaServicio(idDelServicio,fechaIni, fechaFin).then(
     (respuesta)=>{
       this.serviciosHistoriaList = Historial.fromJsonList(respuesta);
       console.log(this.serviciosHistoriaList);
     }
   )
-
-
+  }
+  else
+  {
+    this.openModal(template,"Debe seleccionar un servicio y un rago de fechas");
    
-
+  }
  }
+
+
+ObtenerFormatoFecha(date) {
+  var d=new Date(date),
+  month=''+ (d.getMonth() +1),
+  day=''+d.getDate(),
+  year=d.getFullYear();
+  
+  if (month.length <2) month='0'+month;
+  if (day.length <2) day='0'+day;
+  return [year, month, day].join('-');
+ }
+
+
 
 }

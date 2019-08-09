@@ -8,6 +8,39 @@ import {Servicios} from './dominios/servicios';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
+  
   title = 'estado-servicios';
+  listaServicios: Servicios[] = [];
+  totalServicios: number = 0;
+  totalIncidentes: number = 0;
+  
+
+
+  constructor(public servicios:SPServicio) { }
+
+  ngOnInit() {
+   
+    
+    this.ObtenerTodosLosServicios();
+
+  }
+
+  ObtenerTodosLosServicios(){
+    this.servicios.ObtenerTodosLosServicios().then(
+      (respuesta)=>{
+        this.listaServicios = Servicios.fromJsonList(respuesta);
+        for (let servicio of this.listaServicios) {
+          this.totalServicios++;
+          if(servicio.estado!="Correcto")
+          {
+           this.totalIncidentes++;
+          }
+        }
+      
+        
+      }
+    )
+  }
+
 }

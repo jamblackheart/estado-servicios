@@ -6,8 +6,8 @@ padding: 35px;
 }
 
 .btnDescripcion{
-    background-color: #ff1674;
-    border: none;
+    background-color: #EB0F70;
+    border: 0px solid #EB0F70;
     color: #fff;
     font-weight: 700;
     border-radius: 20px;
@@ -15,16 +15,33 @@ padding: 35px;
     width: 150px;
 }
 
+
+.btnDescripcion:hover{
+    color: #FFFFFF;
+    background-color: #A40A4E;
+}
+
+
+
+
 .btnIncidente{
-    background-color: #5c216e;
-    border: none;
-    color: #fff;
+    background-color: #FFFFFF;
+    border: 3px solid #EB0F70;
+    color: #EB0F70;
     font-weight: 700;
     border-radius: 20px;
     padding: 5px 15px;
     width: 150px;
     margin-top: 5px;
 }
+
+
+.btnIncidente:hover{
+    color: #FFFFFF;
+    background-color: #EB0F70;
+}
+
+
 .modal-header
 {
 

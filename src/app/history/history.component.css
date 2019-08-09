@@ -5,16 +5,75 @@ color: #767676;
 font-size: 14px;
 line-height: 17px;}
 
+.table
+{
+width: 100%;
+padding: 35px;
+
+}
+
 .bs-datepicker-head {
     background-color: #ff1674 !important;
 }
 
+.theme-dark-blue .bs-datepicker-head {
+    background-color: #ff1674 !important;
+}
+.bs-datepicker-head {
+    background-color: red !important;
+}
+
 .btnDescripcion{
-    background-color: #ff1674;
-    border: none;
+    background-color: #EB0F70;
+    border: 0px solid #EB0F70;
     color: #fff;
     font-weight: 700;
     border-radius: 20px;
     padding: 5px 15px;
     width: 150px;
+}
+
+
+.btnDescripcion:hover{
+    color: #FFFFFF;
+    background-color: #A40A4E;
+}
+
+
+
+
+.btnIncidente{
+    background-color: #FFFFFF;
+    border: 3px solid #EB0F70;
+    color: #EB0F70;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 150px;
+    margin-top: 5px;
+}
+
+
+.btnIncidente:hover{
+    color: #FFFFFF;
+    background-color: #EB0F70;
+}
+
+
+.modal-header
+{
+
+         border-bottom: 0px solid #e9ecef; 
+}
+#modal
+{
+
+    border-radius: 20px;
+}
+
+.modal-content {
+border: 0px solid rgba(0,0,0,.2);
+min-height: 300px;
+border-radius: .5rem;
+
 }
