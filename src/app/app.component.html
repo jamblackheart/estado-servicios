@@ -71,12 +71,17 @@
                         </a>
                     </div>
 
-                    <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
-                        <a routerLink="/Actualizar" routerLinkActive="active" >
-                            <img alt="" src="assets/images/profile/Actualizar_servicios.png">
-                            <span class="ml-3">Actualizar servicios</span>
-                        </a>
-                    </div>
+                    <ng-container *ngIf="esColaborador">
+                             
+                        <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
+                            <a routerLink="/Actualizar" routerLinkActive="active" >
+                                <img alt="" src="assets/images/profile/Actualizar_servicios.png">
+                                <span class="ml-3">Actualizar servicios</span>
+                            </a>
+                        </div>
+                    </ng-container>
+
+
                    
                 </div>
                 <div class="p-3">
@@ -121,16 +126,16 @@
                           </li>
                           <li class="footer-nav__list__social">
                               <a href="https://www.facebook.com/PuntosColombia/" target="_blank">
-                                  <img alt="Facebook" class="footer-nav__social" src="../assets/images/icons/social/facebook_gray.svg">
+                                  <img alt="Facebook" class="footer-nav__social" src="assets/images/icons/social/facebook_gray.svg">
                               </a>
                               <a href="https://www.instagram.com/puntoscolombia/" target="_blank">
-                                  <img alt="Instagram" class="footer-nav__social" src="../assets/images/icons/social/instagram_gray.svg">
+                                  <img alt="Instagram" class="footer-nav__social" src="assets/images/icons/social/instagram_gray.svg">
                               </a>
                               <a href="https://twitter.com/puntoscolombia" target="_blank">
-                                  <img alt="Twitter" class="footer-nav__social" src="../assets/images/icons/social/twitter_gray.svg">
+                                  <img alt="Twitter" class="footer-nav__social" src="assets/images/icons/social/twitter_gray.svg">
                               </a>
                               <a href="https://www.youtube.com/channel/UCjBEa4rF_bP5x5kd9ALXgiw" target="_blank">
-                                  <img alt="Youtube" class="footer-nav__social" src="../assets/images/icons/social/youtube_gray.svg">
+                                  <img alt="Youtube" class="footer-nav__social" src="assets/images/icons/social/youtube_gray.svg">
                               </a>
                           </li>
                       </ul>
@@ -142,10 +147,10 @@
                       <h6 class="footer-nav__content__title">Centro de ayuda</h6>
                       <ul>
                           <li>
-                              <a class="footer-nav__content__link" fragment="registration" routerlink="/ayuda" href="/ayuda#registration">¿Cómo registrarme?</a>
+                              <a class="footer-nav__content__link" fragment="registration"  href="https://www.puntoscolombia.com/l/ayuda#registration">¿Cómo registrarme?</a>
                           </li>
                           <li>
-                              <a class="footer-nav__content__link" routerlink="/ayuda" href="/ayuda">Preguntas frecuentes</a>
+                              <a class="footer-nav__content__link"  href="https://www.puntoscolombia.com/l/ayuda">Preguntas frecuentes</a>
                           </li>
                           <li>
                               <a class="footer-nav__content__link" href="mailto:servicio@clientes.puntoscolombia.com">servicio@clientes.puntoscolombia.com</a>
@@ -175,7 +180,7 @@
                               <a class="footer-nav__content__link" href="https://landing.puntoscolombia.com/conviertete-en-aliado-de-puntos-colombia">Regístrate como aliado</a>
                           </li>
                           <li>
-                              <a class="footer-nav__content__link" routerlink="/aliados" href="/aliados">Conoce nuestros aliados</a>
+                              <a class="footer-nav__content__link"  href="https://www.puntoscolombia.com/l/aliados">Conoce nuestros aliados</a>
                           </li>
                           <li>
                               <a class="footer-nav__content__link" href="mailto:servicio@aliados.puntoscolombia.com" target="_blank">servicio@aliados.puntoscolombia.com</a>

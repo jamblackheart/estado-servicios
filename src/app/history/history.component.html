@@ -52,7 +52,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let element of serviciosHistoriaList | paginate: { itemsPerPage: 10 }">
+              <tr *ngFor="let element of serviciosHistoriaList ">
                 <th>{{element.fechaModificacion | date: 'dd-MM-yyyy'}}</th>
                 <td>{{element.estado}}</td>
                 <td>                           
@@ -65,7 +65,7 @@
              
             </tbody>
           </table>
-          <pagination-controls (pageChange)="$event"></pagination-controls>
+          
         <br>
          
         <ng-template #template id="modal">
