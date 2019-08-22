@@ -2,36 +2,6 @@
     <h2 class="text-center">Estado actual servicios</h2>
 </div>
 
-<<<<<<< HEAD
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let element of string ">
-        <th>{{element.nombre}}</th>
-        <td>{{element.estado}}</td>
-        <td>
-                    
-                <button type="button" class="btnDescripcion" (click)="openModal(template, element.descripcion)">Descripción</button>
-                
-                <ng-container *ngIf="element.estado !== 'Correcto'" >
-                    <br/>   
-                     
-                    <button type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button> 
-                              
-
-                </ng-container>
-           
-        </td>
-        <ng-container *ngIf="esColaborador">
-            <td>{{element.usuarioModifica.Title}}</td>              
-        </ng-container>
-      </tr>
-     
-    </tbody>
-  </table>
- 
-=======
 <div class="">
     <div>
         <table mat-table [dataSource]="dataSource">
@@ -72,7 +42,6 @@
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
 </div>
->>>>>>> master
 
 <ng-template #template id="modal">
     <div class="modal-header">

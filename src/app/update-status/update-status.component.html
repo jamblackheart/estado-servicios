@@ -1,40 +1,6 @@
 <div class="m-3 pt-1 pb-1 hidden-md-down">
     <h2 class="text-center">Actualizar estado de servicio</h2>
 </div>
-<<<<<<< HEAD
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Servicio</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Actualizar</th>
-      <ng-container *ngIf="esColaborador">
-        <th scope="col">Modificado por</th>
-      </ng-container>
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let element of string ">
-      <th>{{element.nombre}}</th>
-      <td>{{element.estado}}</td>
-      <td>
-
-        <button type="button" class="btnIncidente" (click)="openModal2(template2, element.detalleCambio)">Detalle</button>
-        <br /><br />
-
-        <button type="button" class="btnDescripcion" (click)="openModal(template,element.id)">Actualizar</button>
-      </td>
-      <ng-container *ngIf="esColaborador">
-        <td>{{element.usuarioModifica.Title}}</td>
-      </ng-container>
-    </tr>
-
-  </tbody>
-</table>
-=======
 <div class="">
     <div>
         <table mat-table [dataSource]="dataSource">
@@ -111,7 +77,6 @@
     </tbody>
 </table>
 <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
->>>>>>> master
 
 
 
