@@ -1,15 +1,14 @@
-.TituloRango
-{padding-left: 10px;
+.TituloRango {
+    padding-left: 10px;
     margin-left: 10px;
-color: #767676;
-font-size: 14px;
-line-height: 17px;}
+    color: #767676;
+    font-size: 14px;
+    line-height: 17px;
+}
 
-.table
-{
-width: 100%;
-padding: 35px;
-
+.table {
+    width: 100%;
+    padding: 35px;
 }
 
 .bs-datepicker-head {
@@ -19,11 +18,12 @@ padding: 35px;
 .theme-dark-blue .bs-datepicker-head {
     background-color: #ff1674 !important;
 }
+
 .bs-datepicker-head {
     background-color: red !important;
 }
 
-.btnDescripcion{
+.btnDescripcion {
     background-color: #EB0F70;
     border: 0px solid #EB0F70;
     color: #fff;
@@ -33,16 +33,12 @@ padding: 35px;
     width: 150px;
 }
 
-
-.btnDescripcion:hover{
+.btnDescripcion:hover {
     color: #FFFFFF;
     background-color: #A40A4E;
 }
 
-
-
-
-.btnIncidente{
+.btnIncidente {
     background-color: #FFFFFF;
     border: 3px solid #EB0F70;
     color: #EB0F70;
@@ -53,27 +49,38 @@ padding: 35px;
     margin-top: 5px;
 }
 
-
-.btnIncidente:hover{
+.btnIncidente:hover {
     color: #FFFFFF;
     background-color: #EB0F70;
 }
 
-
-.modal-header
-{
-
-         border-bottom: 0px solid #e9ecef; 
+.modal-header {
+    border-bottom: 0px solid #e9ecef;
 }
-#modal
-{
 
+#modal {
     border-radius: 20px;
 }
 
 .modal-content {
-border: 0px solid rgba(0,0,0,.2);
-min-height: 300px;
-border-radius: .5rem;
+    border: 0px solid rgba(0, 0, 0, .2);
+    min-height: 300px;
+    border-radius: .5rem;
+}
 
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+table tr:nth-child(even) {
+    background: #CCC
+}
+
+table tr:nth-child(odd) {
+    background: #FFF
 }

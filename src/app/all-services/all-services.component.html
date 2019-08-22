@@ -1,81 +1,69 @@
-  
-  <div class="m-3 pt-1 pb-1 hidden-md-down">
-      <h2 class="text-center">Estado actual servicios</h2>
-  </div>                          
-                        
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Servicio</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Detalle</th>
-        <ng-container *ngIf="esColaborador">
-            <th scope="col">Modificado por</th>              
-        </ng-container>
+<div class="m-3 pt-1 pb-1 hidden-md-down">
+    <h2 class="text-center">Estado actual servicios</h2>
+</div>
 
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let element of string | paginate: { itemsPerPage: 10, currentPage: p }">
-        <th>{{element.nombre}}</th>
-        <td>{{element.estado}}</td>
-        <td>
-                    
-                <button type="button" class="btnDescripcion" (click)="openModal(template, element.descripcion)">Descripción</button>
-                
-                <ng-container *ngIf="element.estado !== 'Correcto'" >
-                    <br/>   
-                     
-                    <button type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button> 
-                              
+<div class="">
+    <div>
+        <table mat-table [dataSource]="dataSource">
 
-                </ng-container>
-           
-        </td>
-        <ng-container *ngIf="esColaborador">
-            <td>{{element.usuarioModifica.Title}}</td>              
-        </ng-container>
-      </tr>
-     
-    </tbody>
-  </table>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <ng-container matColumnDef="Servicio">
+                <th mat-header-cell *matHeaderCellDef> <strong>Servicio</strong> </th>
+                <td mat-cell *matCellDef="let element">
+                    <img *ngIf="element.estado === 'Correcto'" class="iconoEstado" src="../assets/images/icons/Correcto.png" alt="">
+                    <img *ngIf="element.estado === 'Degradado'" class="iconoEstado" src="../assets/images/icons/advertencia.png" alt="">
+                    <img *ngIf="element.estado === 'Critico'" class="iconoEstado" src="../assets/images/icons/Critico.png" alt=""> <strong>{{element.nombre}}</strong>
+                </td>
+            </ng-container>
 
+            <ng-container matColumnDef="Estado">
+                <th mat-header-cell *matHeaderCellDef> <strong>Estado</strong> </th>
+                <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+            </ng-container>
 
-  
-<br>
- 
+            <ng-container matColumnDef="Detalle">
+                <th mat-header-cell *matHeaderCellDef> <strong>Detalle</strong> </th>
+                <td mat-cell *matCellDef="let element">
+                    <ng-container *ngIf="element.estado !== 'Correcto'">
+                        <button *ngIf="element.estado === 'Degradado'" type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button>
+                        <button *ngIf="element.estado === 'Critico'" type="button" class="btnDescripcion" (click)="openModal(template, element.detalleCambio)">Incidente</button>
+                    </ng-container>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ModificadoPor">
+                <th mat-header-cell *matHeaderCellDef [hidden]="!esColaborador"> <strong>Modificado por</strong> </th>
+                <td mat-cell *matCellDef="let element" [hidden]="!esColaborador"> {{element.usuarioModifica.Title}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>
+
 <ng-template #template id="modal">
-  <div class="modal-header">        
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
-      <div class="text-center">
-          <img style="width: 250px;" _ngcontent-c2="" alt="Puntos Colombia" class="modal-logo" src="assets/images/logo.png">
+    </div>
+    <div class="modal-body">
+        <div class="text-center">
+            <img style="width: 250px;" _ngcontent-c2="" alt="Puntos Colombia" class="modal-logo" src="assets/images/logo.png">
         </div>
-        
         <div _ngcontent-c2="" class="modal-dialog modal-open" style="max-width: 480px">
-                <div _ngcontent-c2="" class="col container align-items-center">
-                    <div _ngcontent-c2="" class="modal-content">
-                        
-                       <div _ngcontent-c2="" class="login-modal__form-wrapper justify-content-center text-center">
-                            <form _ngcontent-c2="" class="m-0 ng-pristine ng-invalid ng-touched" novalidate="">
-                                <label _ngcontent-c2="">{{textoModal}}</label>
-                                
-                               
-                                
-                            </form>
-        
-                           
-                        </div>
+            <div _ngcontent-c2="" class="col container align-items-center">
+                <div _ngcontent-c2="" class="modal-content">
+
+                    <div _ngcontent-c2="" class="login-modal__form-wrapper justify-content-center text-center">
+                        <form _ngcontent-c2="" class="m-0 ng-pristine ng-invalid ng-touched" novalidate="">
+                            <label _ngcontent-c2="">{{textoModal}}</label>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-  </div>
+        </div>
+    </div>
 </ng-template>
-
