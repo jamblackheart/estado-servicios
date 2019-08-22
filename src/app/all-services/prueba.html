@@ -1,0 +1,34 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Servicio</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Detalle</th>
+            <ng-container *ngIf="esColaborador">
+                <th scope="col">Modificado por</th>
+            </ng-container>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let element of string | paginate: { itemsPerPage: 10, currentPage: p }">
+            <th>
+                <img *ngIf="element.estado === 'Correcto'" class="iconoEstado" src="../assets/images/icons/Correcto.png" alt="">
+                <img *ngIf="element.estado === 'Degradado'" class="iconoEstado" src="../assets/images/icons/advertencia.png" alt="">
+                <img *ngIf="element.estado === 'Critico'" class="iconoEstado" src="../assets/images/icons/Critico.png" alt=""> {{element.nombre}}
+            </th>
+            <td>{{element.estado}}</td>
+            <td>
+                <!-- <button type="button" class="btnDescripcion" (click)="openModal(template, element.descripcion)">Descripción</button> -->
+                <ng-container *ngIf="element.estado !== 'Correcto'">
+                    <button *ngIf="element.estado === 'Degradado'" type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button>
+                    <button *ngIf="element.estado === 'Critico'" type="button" class="btnDescripcion" (click)="openModal(template, element.detalleCambio)">Incidente</button>
+                    <!-- <br/> -->
+                    <!-- <button type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button> -->
+                </ng-container>
+            </td>
+            <ng-container *ngIf="esColaborador">
+                <td>{{element.usuarioModifica.Title}}</td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>

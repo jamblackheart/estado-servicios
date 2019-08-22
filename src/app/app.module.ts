@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
+import { MatExpansionModule, MatFormFieldModule, MatInputModule, MatCardModule, MatRadioModule, MatSlideToggleModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE, MatTableModule, MatPaginatorModule, MatToolbarModule, MatAutocompleteModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,24 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     FormsModule,
-        ReactiveFormsModule,
-        BsDropdownModule.forRoot(),TextareaAutosizeModule
+    ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
+    TextareaAutosizeModule,
+    //Angular Material    
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatPaginatorModule,    
+    MatAutocompleteModule,
         
   ],
   providers: [SPServicio],
