@@ -9,9 +9,9 @@
             <ng-container matColumnDef="Servicio">
                 <th mat-header-cell *matHeaderCellDef> <strong>Servicio</strong> </th>
                 <td mat-cell *matCellDef="let element">
-                    <img *ngIf="element.estado === 'Correcto'" class="iconoEstado" src="assets/images/icons/Correcto.png" alt="">
-                    <img *ngIf="element.estado === 'Degradado'" class="iconoEstado" src="assets/images/icons/advertencia.png" alt="">
-                    <img *ngIf="element.estado === 'Critico'" class="iconoEstado" src="assets/images/icons/Critico.png" alt=""> <strong>{{element.nombre}}</strong>
+                    <img *ngIf="element.estado === 'Correcto'" class="iconoEstado" src="../assets/images/icons/Correcto.png" alt="">
+                    <img *ngIf="element.estado === 'Degradado'" class="iconoEstado" src="../assets/images/icons/advertencia.png" alt="">
+                    <img *ngIf="element.estado === 'Crítico'" class="iconoEstado" src="../assets/images/icons/Critico.png" alt=""> <strong>{{element.nombre}}</strong>
                 </td>
             </ng-container>
 
@@ -25,7 +25,7 @@
                 <td mat-cell *matCellDef="let element">
                     <ng-container *ngIf="element.estado !== 'Correcto'">
                         <button *ngIf="element.estado === 'Degradado'" type="button" class="btnIncidente" (click)="openModal(template, element.detalleCambio)">Incidente</button>
-                        <button *ngIf="element.estado === 'Critico'" type="button" class="btnDescripcion" (click)="openModal(template, element.detalleCambio)">Incidente</button>
+                        <button *ngIf="element.estado === 'Crítico'" type="button" class="btnDescripcion" (click)="openModal(template, element.detalleCambio)">Incidente</button>
                     </ng-container>
                 </td>
             </ng-container>
