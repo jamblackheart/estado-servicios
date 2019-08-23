@@ -87,7 +87,7 @@ export class AllServicesComponent implements OnInit {
     let ObjServicios = [];
     this.servicios.ObtenerTodosLosServicios().then(respuesta => {
       this.string = Servicios.fromJsonList(respuesta);
-      let objCritico = this.string.filter((x)=> x.estado === "Critico");
+      let objCritico = this.string.filter((x)=> x.estado === "Crítico");
       objCritico.map((x)=>{
         ObjServicios.push(x);
       });      
