@@ -9,9 +9,9 @@
             <ng-container matColumnDef="Servicio">
                 <th mat-header-cell *matHeaderCellDef> <strong>Servicio</strong> </th>
                 <td mat-cell *matCellDef="let element">
-                    <img *ngIf="element.estado === 'Correcto'" class="iconoEstado" src="../assets/images/icons/Correcto.png" alt="">
-                    <img *ngIf="element.estado === 'Degradado'" class="iconoEstado" src="../assets/images/icons/advertencia.png" alt="">
-                    <img *ngIf="element.estado === 'Crítico'" class="iconoEstado" src="../assets/images/icons/Critico.png" alt=""> <strong>{{element.nombre}}</strong>
+                    <img *ngIf="element.estado === 'Correcto'" class="iconoEstado" src="assets/images/icons/Correcto.png" alt="">
+                    <img *ngIf="element.estado === 'Degradado'" class="iconoEstado" src="assets/images/icons/advertencia.png" alt="">
+                    <img *ngIf="element.estado === 'Crítico'" class="iconoEstado" src="assets/images/icons/Critico.png" alt=""> <strong>{{element.nombre}}</strong>
                 </td>
             </ng-container>
 

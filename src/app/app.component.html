@@ -1,41 +1,37 @@
-
-   <nav class="navbar sticky-top main-nav">
+<nav class="navbar sticky-top main-nav">
     <div style="width: 100%" class="main-nav__info-bar">
         <div class="hidden-sm-down main-nav__info-bar__content" style="height: 15px">
         </div>
     </div>
 
     <div class="main-nav__content" style="width: 100%">
-      <div class="logo" >
-          <img class="main-nav__logo__image" src="assets/images/logo.png" alt="Puntos Colombia">
-      </div>
-     
+        <div class="logo">
+            <img class="main-nav__logo__image" src="assets/images/logo.png" alt="Puntos Colombia">
+        </div>
+
         <div class="large-item-holder justify-content-center d-flex hidden-md-down">
-           
 
-                <div class="nav-item-option__name">ESTADO DE SERVICIOS.</div>
-            </div>
-           
-       
-            <div class="atras"  >
-                    <a href="https://www.google.com">
-                        <img class="main-nav__logo__image" src="assets/images/atras.png" alt="Puntos Colombia">
-                    </a>
-            </div>
+            <div class="nav-item-option__name">ESTADO DE SERVICIOS.</div>
+        </div>
 
 
+        <div class="atras">
+            <a href="https://www.google.com">
+                <img class="main-nav__logo__image" src="assets/images/atras.png" alt="Puntos Colombia">
+            </a>
+        </div>
 
-      
 
-       
+
+
     </div>
 
-   
+
 </nav>
 
 <main _ngcontent-c0="" class="ro-app-content" role="main">
-       
-    
+
+
 
 
     <div class="container">
@@ -57,7 +53,7 @@
                 <div class="p-3 leftrow">
 
                     <div class="m-1 profile-dashboard-item" routerlinkactive="active-dashboard-item">
-                            
+
                         <a routerLink="/Servicios" routerLinkActive="active">
                             <img alt="" src="assets/images/profile/Estado_servicio.png">
                             <span class="ml-3">Estado Servicios</span>
@@ -65,16 +61,16 @@
                     </div>
 
                     <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
-                        <a routerLink="/Historial"  routerLinkActive="active">
+                        <a routerLink="/Historial" routerLinkActive="active">
                             <img alt="" src="assets/images/profile/Historial.png">
                             <span class="ml-3">Historial de servicios</span>
                         </a>
                     </div>
 
                     <ng-container *ngIf="esColaborador">
-                             
+
                         <div class="m-1 mt-3 profile-dashboard-item" routerlinkactive="active-dashboard-item">
-                            <a routerLink="/Actualizar" routerLinkActive="active" >
+                            <a routerLink="/Actualizar" routerLinkActive="active">
                                 <img alt="" src="assets/images/profile/Actualizar_servicios.png">
                                 <span class="ml-3">Actualizar servicios</span>
                             </a>
@@ -82,7 +78,7 @@
                     </ng-container>
 
 
-                   
+
                 </div>
                 <div class="p-3">
                     <div class="m-1 mt-3 profile-dashboard-item">
@@ -92,14 +88,14 @@
                         </a>
                     </div>
                 </div>
-            </div>           
+            </div>
 
             <div class="col-lg-9  justify-content-center align-items-center">
-               
 
-                
+
+
                 <router-outlet></router-outlet>
-                
+
             </div>
         </div>
         <div style="height: 15px;">
@@ -108,84 +104,90 @@
     </div>
 
 </main>
-     
-         <footer class="footer-nav footer-nav__profile-section">
-              <div class="footer-nav__section footer-nav__section--puntos">
-                  <div class="footer-nav__content">
-                      <h6 class="footer-nav__content__title">Puntos Colombia</h6>
-                      <ul>
-                          <li>
-                                
-                              <a class="footer-nav__content__link" routerlink="/quienes-somos" >Conócenos</a>
-                          </li>
-                          <li>
-                              <a class="footer-nav__content__link" routerlink="/legal" href="/legal">Documentos Legales</a>
-                          </li>
-                          <li>
-                              <p class="footer-nav__content__link">Carrera 48 #32B Sur-139. Envigado, Colombia</p>
-                          </li>
-                          <li class="footer-nav__list__social">
-                              <a href="https://www.facebook.com/PuntosColombia/" target="_blank">
-                                  <img alt="Facebook" class="footer-nav__social" src="assets/images/icons/social/facebook_gray.svg">
-                              </a>
-                              <a href="https://www.instagram.com/puntoscolombia/" target="_blank">
-                                  <img alt="Instagram" class="footer-nav__social" src="assets/images/icons/social/instagram_gray.svg">
-                              </a>
-                              <a href="https://twitter.com/puntoscolombia" target="_blank">
-                                  <img alt="Twitter" class="footer-nav__social" src="assets/images/icons/social/twitter_gray.svg">
-                              </a>
-                              <a href="https://www.youtube.com/channel/UCjBEa4rF_bP5x5kd9ALXgiw" target="_blank">
-                                  <img alt="Youtube" class="footer-nav__social" src="assets/images/icons/social/youtube_gray.svg">
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
 
-              <div class="footer-nav__section footer-nav__section--help">
-                  <div class="footer-nav__content">
-                      <h6 class="footer-nav__content__title">Centro de ayuda</h6>
-                      <ul>
-                          <li>
-                              <a class="footer-nav__content__link" fragment="registration"  href="https://www.puntoscolombia.com/l/ayuda#registration">¿Cómo registrarme?</a>
-                          </li>
-                          <li>
-                              <a class="footer-nav__content__link"  href="https://www.puntoscolombia.com/l/ayuda">Preguntas frecuentes</a>
-                          </li>
-                          <li>
-                              <a class="footer-nav__content__link" href="mailto:servicio@clientes.puntoscolombia.com">servicio@clientes.puntoscolombia.com</a>
-                          </li>
-                          <li>
-                              Línea de servicio al cliente:
-                              <strong class="footer-nav__content__link"><a href="tel:01 8000 180 698">01&nbsp;8000&nbsp;180&nbsp;698</a></strong>
-                          </li>
-                          <li>
+<footer class="footer-nav footer-nav__profile-section">
+    <div class="footer-nav__section footer-nav__section--puntos">
+        <div class="footer-nav__content">
+            <h6 class="footer-nav__content__title">Puntos Colombia</h6>
+            <ul>
+                <li>
+
+                    <a class="footer-nav__content__link" routerlink="/quienes-somos">Conócenos</a>
+                </li>
+                <li>
+                    <a class="footer-nav__content__link" routerlink="/legal" href="/legal">Documentos Legales</a>
+                </li>
+                <li>
+                    <p class="footer-nav__content__link">Carrera 48 #32B Sur-139. Envigado, Colombia</p>
+                </li>
+                <li class="footer-nav__list__social">
+                    <a href="https://www.facebook.com/PuntosColombia/" target="_blank">
+                        <img alt="Facebook" class="footer-nav__social" src="../assets/images/icons/social/facebook_gray.svg">
+                    </a>
+                    <a href="https://www.instagram.com/puntoscolombia/" target="_blank">
+                        <img alt="Instagram" class="footer-nav__social" src="../assets/images/icons/social/instagram_gray.svg">
+                    </a>
+                    <a href="https://twitter.com/puntoscolombia" target="_blank">
+                        <img alt="Twitter" class="footer-nav__social" src="../assets/images/icons/social/twitter_gray.svg">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCjBEa4rF_bP5x5kd9ALXgiw" target="_blank">
+                        <img alt="Youtube" class="footer-nav__social" src="../assets/images/icons/social/youtube_gray.svg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-nav__section footer-nav__section--help">
+        <div class="footer-nav__content">
+            <h6 class="footer-nav__content__title">Centro de ayuda cliente</h6>
+            <ul>
+                <li>
+                    <a class="footer-nav__content__link" fragment="registration" routerlink="/ayuda" href="/ayuda#registration">¿Cómo registrarme?</a>
+                </li>
+                <li>
+                    <a class="footer-nav__content__link" routerlink="/ayuda" href="/ayuda">Preguntas frecuentes</a>
+                </li>
+                <li>
+                    <a class="footer-nav__content__link" href="mailto:servicio@clientes.puntoscolombia.com">servicio@clientes.puntoscolombia.com</a>
+                </li>
+                <li>
+                    Línea de servicio al cliente:
+                    <strong class="footer-nav__content__link"><a href="tel:01 8000 180 698">01&nbsp;8000&nbsp;180&nbsp;698</a></strong>
+                </li>
+                <!-- <li>
                               <a class="footer-nav__content__link" href="servicio@empresas.puntoscolombia.com">servicio@empresas.puntoscolombia.com</a>
-                          </li>
-                          <li>
+                          </li> -->
+                <!-- <li>
                               <p class="footer-nav__content__link">
                                   Línea de servicio a empresas:
                                   <strong><a href="tel:01 8000 180 748">01&nbsp;8000&nbsp;180&nbsp;748</a></strong>
                               </p>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
+                          </li> -->
+            </ul>
+        </div>
+    </div>
 
-              <div class="footer-nav__section footer-nav__section--partners">
-                  <div class="footer-nav__content">
-                      <h6 class="footer-nav__content__title">Aliados</h6>
-                      <ul>
-                          <li>
-                              <a class="footer-nav__content__link" href="https://landing.puntoscolombia.com/conviertete-en-aliado-de-puntos-colombia">Regístrate como aliado</a>
-                          </li>
-                          <li>
-                              <a class="footer-nav__content__link"  href="https://www.puntoscolombia.com/l/aliados">Conoce nuestros aliados</a>
-                          </li>
-                          <li>
-                              <a class="footer-nav__content__link" href="mailto:servicio@aliados.puntoscolombia.com" target="_blank">servicio@aliados.puntoscolombia.com</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </footer> 
+    <div class="footer-nav__section footer-nav__section--partners">
+        <div class="footer-nav__content">
+            <h6 class="footer-nav__content__title">Centro de ayudas aliados</h6>
+            <ul>
+                <li>
+                    <a class="footer-nav__content__link" href="https://landing.puntoscolombia.com/conviertete-en-aliado-de-puntos-colombia">Regístrate como aliado</a>
+                </li>
+                <li>
+                    <a class="footer-nav__content__link" routerlink="/aliados" href="/aliados">Conoce nuestros aliados</a>
+                </li>
+                <li>
+                    <a class="footer-nav__content__link" href="mailto:servicio@aliados.puntoscolombia.com" target="_blank">servicio@aliados.puntoscolombia.com</a>
+                </li>
+                <li>
+                    <p class="footer-nav__content__link">
+                        Línea de servicio para aliados:
+                        <strong><a href="tel:01 8000 180 749">01&nbsp;8000&nbsp;180&nbsp;749</a></strong>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
